@@ -11,6 +11,7 @@ class EntryAdmin(admin.ModelAdmin):
         ('catalog',{'fields':['categorys']}),
     ]
     list_display = ('title', 'slug', 'status', 'creation_date', 'last_update')
+    
 
 admin.site.register(Category)
 admin.site.register(Entry, EntryAdmin)
