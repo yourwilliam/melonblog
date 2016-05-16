@@ -19,6 +19,7 @@ class Entry(models.Model):
     
     STATUS_CHOICES = ((0, 'draft'), (1, 'hidden'), (2, 'publish'))
     title = models.CharField("title", max_length=255)
+    blog_abstract = models.TextField("blog abstract", null=True, blank=True, max_length=200)
     slug = models.CharField("slug", max_length=255)
     status = models.IntegerField("status", db_index=True, choices=STATUS_CHOICES, default=0)
     publication_date = models.DateTimeField("publication date", db_index=True, default=timezone.now, help_text="Used to build the entry's URL.")
@@ -27,12 +28,12 @@ class Entry(models.Model):
     creation_date = models.DateTimeField("creation date", default=timezone.now)
     last_update = models.DateTimeField("last update", default=timezone.now)
     #content
-    content = models.TextField("content", blank=True)
+    content = models.TextField("content", null=True, blank=True)
     # after to convert the content to html or markdown modle. add some method
     categorys = models.ManyToManyField(Category, blank=True, related_name="entries", verbose_name="categories");
 
 
     head_image_url = models.URLField("head image url", max_length=255, null=True, blank=True)
-    head_image = models.ImageField(upload_to='photos/%Y/%m',null=True)
+    head_image = models.ImageField(upload_to='photos/%Y/%m',null=True, blank=True)
     def __unicode__(self):
         return self.title

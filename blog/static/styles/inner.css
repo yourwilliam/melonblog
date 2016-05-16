@@ -1,0 +1,336 @@
+/* 
+
+Amazing - CSS File
+
+USE THIS STYLE SHEET FOR INNER PAGE
+
+*/
+
+
+
+/* Page Navi*/
+.wp-pagenavi {padding:10px 20px 10px 20px; font-size:11px; display:block; text-align:right; margin-bottom:20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.wp-pagenavi .pages{padding-left:20px; float:left;}
+.wp-pagenavi a, .wp-pagenavi a:visited{padding:0px; margin:0 4px;}
+.wp-pagenavi .current{padding:0px; margin:0 4px;}
+
+
+
+/* BLOG */
+.post{margin-bottom:40px; 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:30px 20px 30px 18px; 
+}
+.single .post{ margin-bottom:20px;}
+
+.post .header-wrapper{ overflow:hidden}
+
+.posttitle, .posttitle a{font-size:24px; margin-bottom:0px; margin-top:5px; font-family: 'Roboto', sans-serif; text-transform:none;}
+.posttitle a:hover{text-decoration:none;}
+
+
+.postimg {
+    position: relative; margin-bottom:20px; padding-top:21px;
+}
+.postimg:before, .postimg:after {
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+    z-index: 1;
+}
+.postimg:after {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+.postimg img{
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;	
+	z-index:2;
+	position:relative;
+}
+
+
+.entry-utility{padding:3px 0 5px 0; clear:both; font-size:11px;}
+.entry-utility .user{ display:inline-block; padding-left:20px;}
+.entry-utility .tag{ display:inline-block; padding-left:15px; margin-left:20px;}
+
+.post .date-wrapper{ float:left; text-align:center; width: 60px; margin-right:20px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+.post .date-wrapper .date-value {
+    font-size: 26px;
+	margin-top:10px;
+    margin-bottom: 15px;
+}
+.post .date-wrapper .month-value {
+    font-size: 10px;
+	text-transform:uppercase;
+    margin-bottom: 6px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.single .date-wrapper{ text-align:left}
+
+.entry-content { overflow:hidden;}
+
+.entry-content .entry-utility{ padding-top:0px;}
+
+.author{ margin-bottom:0px;}
+.author h3{ font-size:16px;}
+.author h5{ font-family: 'Roboto', sans-serif; margin-bottom:5px;}
+.author img, .avatar-img img{
+-webkit-border-radius: 56px;
+-moz-border-radius: 56px;
+border-radius: 56px;
+}
+.author-desc{ overflow:hidden; margin-left:5px;}
+
+.related-post{margin-bottom:20px; float:left}
+
+#comment h3{ margin-bottom:30px; font-size:16px;}
+.commentlist{
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+.commentlist ol{
+	list-style-type:none;
+	padding:30px 0 0 80px;
+	margin:0;
+}
+
+.commentlist li{
+	position:relative;
+	padding:0 0 30px 0;
+}
+.commentlist li li{
+	position:relative;
+	padding:0;
+}
+
+
+.avatar-img{
+	position:absolute;
+	top:0px;
+	left:0px;
+
+}
+.avatar{display:block}
+.fn{font-size:13px; display:block;}
+
+.commenttext{}
+.tdate, .reply{ font-size:11px;}
+.reply a, .reply a:visited{}
+.reply a:hover{text-decoration:underline;}
+.fn a, .fn a:visited{}
+
+.comment-body{margin:0 0 0 0px; padding:0px; margin-left:75px;}
+.comment-body p{ margin-bottom:5px; margin-top:10px;}
+.comment-body .more{ padding:0px 0px;}
+.comment-arrow{ width:8px; height:18px; position:absolute; left:72px; top:10px;}
+#commentform {margin-bottom:20px}
+#commentform label{display:block}
+#commentform .text-input{
+	margin-bottom:8px;
+	padding:8px 5px;
+	vertical-align:middle;
+}
+#commentform .textarea{
+	margin-bottom:20px;
+	padding:8px 5px;
+	vertical-align:top;
+}
+
+/* PORTFOLIO */
+
+/*======= Portfolio Navigation =======*/
+#frame-filter{ margin:0px auto 30px auto; position:relative; }
+#filter{list-style-type:none; padding:0px 0px 0px 3px;	margin:0px; display:inline-block; clear:both;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+#filter li{list-style-type:none; display:inline-block; margin-left:-3px; padding:8px 10px; font-size:12px;}
+#filter li:last-child{
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+	}
+#filter li:first-child{
+-webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+#filter li.current span{ position:absolute; bottom:-7px; display:block; width:13px; height:7px; left:40%;}
+
+/*======= End Portfolio Navigation =======*/
+
+.ts-display-pf-img{position:relative;}
+.ts-display-clear{clear:both; height:1px !important; line-height:1px !important; float:none!important}
+.ts-display-pf-text{padding:16px 0px 44px 0px; text-align:center}
+.ts-display-pf-text h2{	font-size:15px; margin-bottom:5px; font-family: 'Roboto', sans-serif;}
+
+.ts-display-pf-img a.image img{ display:block;}
+.ts-display-pf-img img{
+	overflow:hidden;
+	display:block;	
+	position:relative;
+-webkit-border-radius: 220px;
+-moz-border-radius: 220px;
+border-radius: 220px;
+	
+}
+.ts-display-pf-img a.image{
+	display:block;
+	position:relative;
+	overflow:hidden;
+}
+.ts-display-pf-img a .rollover{
+	background-color:#e85244;
+	display:block;
+    position:absolute;
+	z-index:10;
+	display:none;
+	cursor:pointer;
+	width:100%;
+	height:100%;
+-webkit-border-radius: 220px;
+-moz-border-radius: 220px;
+border-radius: 220px;
+}
+
+.ts-display-pf-img  .zoom{
+	background:url(../images/hover-zoom.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	display:block;
+    position:absolute;
+	z-index:10;
+	display:none;
+	cursor:pointer;
+	width:100%;
+	height:100%;
+	}
+
+.ts-display-pf-img a .rollover.gotolink{
+	background:url(../images/hover-link.png);
+	background-color:#000;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.ts-display-pf-img a .rollover.gotopost{
+	background:url(../images/hover-doc.png);
+	background-color:#000;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+
+/* ---------------------------- */
+/*       Isotope plugin
+/* ---------------------------- */
+
+.isotope-item {
+	z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+	pointer-events: none;
+	z-index: 1;
+}
+
+.isotope,
+.isotope .isotope-item {
+	-webkit-transition-duration: 0.8s;
+	-moz-transition-duration: 0.8s;
+	-o-transition-duration: 0.8s;
+	transition-duration: 0.8s;
+}
+
+.isotope {
+	-webkit-transition-property: height, width;
+	-moz-transition-property: height, width;
+	-o-transition-property: height, width;
+	transition-property: height, width;
+}
+
+.isotope .isotope-item {
+	-webkit-transition-property: -webkit-transform, opacity;
+	-moz-transition-property: -moz-transform, opacity;
+	-o-transition-property: top, left, opacity;
+	transition-property: transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+	-webkit-transition-duration: 0s;
+	-moz-transition-duration: 0s;
+	-o-transition-duration: 0s;
+	transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+
+/* CONTACT */
+
+form{margin:0; padding:0;}
+fieldset{border:0px;}
+#contactform{margin:0 0 20px 0; position:relative; }
+#contactform label{display:block; width:100%; float:left; padding-bottom:5px; font-size:12px;}
+span.error{color:red;text-align:left; font-size:11px; padding-bottom:15px; display:block;}
+#contactform input.text-input{
+	margin-bottom:15px;
+	vertical-align:middle;
+	width:40%;
+	float:left;
+	padding:10px;
+}
+#contactform textarea{ width:93%; float:left;} 
+#message{ margin-left:0px; font-weight:bold;}
+#message h2	{}
+#message p{margin:6px 0px; }
+
+#contactform .button{
+	cursor:pointer;
+	margin-top:20px;
+	float:left;
+ }
