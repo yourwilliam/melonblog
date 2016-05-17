@@ -41,6 +41,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -134,3 +137,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_ROOT = '/Users/valentine/Documents/media/'
+
+
+# LOCALE_PATHS = (
+#     os.path.join(BASE_DIR, 'locale'),
+# )
+#  
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     "django.core.context_processors.i18n",
+# )

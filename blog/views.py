@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from blog.models import Entry
+from django.utils.translation import ugettext  as _
 
 # Create your views here.
 def index(request):

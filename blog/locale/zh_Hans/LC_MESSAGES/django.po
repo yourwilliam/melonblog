@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-17 23:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: templates/common/base_nav.html:66 templates/common/base_nav.html:142
+msgid "home"
+msgstr "首页"
+
+#: templates/common/base_nav.html:67 templates/common/base_nav.html:143
+msgid "blog"
+msgstr "博客"
+
+#: templates/common/base_nav.html:68 templates/common/base_nav.html:144
+msgid "suggest url"
+msgstr "推荐导航"
+
+#: templates/common/base_nav.html:69 templates/common/base_nav.html:145
+msgid "appcenter"
+msgstr "应用中心"
+
+#: templates/common/base_nav.html:71
+msgid "saasappcenter"
+msgstr "SaaS应用中心"
+
+#: templates/common/base_nav.html:72
+msgid "h5appcenter"
+msgstr "H5应用中心"
+
+#: templates/common/base_nav.html:73
+msgid "toolcenter"
+msgstr "工具中心"
+
+#: templates/common/base_nav.html:75
+msgid "Windows Tools"
+msgstr "Windows工具"
+
+#: templates/common/base_nav.html:76
+msgid "Mac Tools"
+msgstr "MAC工具"
+
+#: templates/common/base_nav.html:81 templates/common/base_nav.html:146
+msgid "aboutme"
+msgstr "我的故事"
+
+#: templates/common/base_nav.html:82 templates/common/base_nav.html:147
+#, fuzzy
+#| msgid "contentme"
+msgid "contactme"
+msgstr "联系我"
+
+#: templates/common/base_nav.html:108
+msgid "Latest Post"
+msgstr ""
+
+#: templates/common/base_nav.html:125
+#, fuzzy
+#| msgid "suggest url"
+msgid "Suggestionurl"
+msgstr "推荐导航"
+
+#: templates/common/base_nav.html:140
+msgid "Our Categories"
+msgstr "网站目录"
+
+#: templates/common/base_nav.html:155
+#, fuzzy
+#| msgid "contentme"
+msgid "contact me"
+msgstr "联系我"
+
+#: templates/common/base_nav.html:177
+msgid "Copyright"
+msgstr "Copyright ©2016. All Rights Reserved. Melon Blog made by william valentine"
+
+#~ msgid "hellotrans"
+#~ msgstr "你好 trans"
