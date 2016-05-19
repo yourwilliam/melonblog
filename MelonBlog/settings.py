@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django_comments',
     'blog',
     'pagination',
+    'tagging',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -152,3 +155,5 @@ MEDIA_ROOT = '/Users/valentine/Documents/media/'
 # TEMPLATE_CONTEXT_PROCESSORS = (
 #     "django.core.context_processors.i18n",
 # )
+
+SITE_ID = 1

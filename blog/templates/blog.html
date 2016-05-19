@@ -1,47 +1,62 @@
 {% extends "common/base_blog.html" %}
 {% load staticfiles %}
 {% load i18n %}
-{% load pagination_tags %}
-
 
 {% block maincontent %}
-                            <section class="content">
-                            
-                            {% autopaginate latest_entry_list 3 %}
-                            	{% if latest_entry_list %}
-                            		{% for entry in latest_entry_list %}
-                            		
-                            	<article class="post">
-                                    <div class="date-wrapper"> 
-										<div class="date-value">{{ entry.publication_date.day }}</div>
-                                        <div class="month-value">{{ entry.publication_date.month }}</div>
-                                    </div>
-                                	<div class="header-wrapper">
-                                        <h2 class="posttitle"><a href="single.html">{{entry.title}}</a></h2>
-                                        <div class="entry-utility">
-                                            <div class="user">Posted by <a href="#">Templatesquare</a></div> <div class="tag">Tags: <a href="#">Wordpress</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="postimg">
-                                        <img src="{{entry.head_image_url}}" alt="" />
-                                    </div>
-       
-                                    <div class="entry-content">
-                                    	{{ entry.blog_abstract }}
-										<a href="single.html" class="more">更多&rarr;</a>
-                                    </div>
-                                   
-                                    <div class="clear"></div>
-                                </article>
-                            		{% endfor %}
-                            	{% endif %}
-                            	
-                            	{#% paginate %#}
-			
-								<div class="wp-pagenavi">
-                                	<span class="pages">Page 1 of 3</span><a class="page" href="#">1</a><span class="current"><span>2</span></span><a class="page" href="#">3</a>
-                            	</div>
-                            </section>
+    <section class="content">
+	
+    	{% if latest_entry_list %}
+    		{% for entry in latest_entry_list %}
+    		
+    	<article class="post">
+            <div class="date-wrapper"> 
+				<div class="date-value">{{ entry.publication_date.day }}</div>
+                <div class="month-value">{{ entry.publication_date|date:"M"}}</div>
+            </div>
+        	<div class="header-wrapper">
+                <h2 class="posttitle"><a href="single?id={{entry.id}}">{{entry.title}}</a></h2>
+                <div class="entry-utility">
+                    <div class="user">Posted by <a href="#">william</a></div> <div class="tag">Tags: <a href="#">{{entry.tags}}</a></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="postimg">
+                <img src="{{entry.head_image_url}}" alt="" />
+            </div>
+   
+            <div class="entry-content">
+            	{{ entry.blog_abstract }}
+				<a href="single.html" class="more">更多&rarr;</a>
+            </div>
+           
+            <div class="clear"></div>
+        </article>
+    		{% endfor %}
+    	{% endif %}
+    	
+    	<div class="wp-pagenavi">
+			<span class="step-links">
+		    	<span class="pages">
+					Page {{ latest_entry_list.number }} of {{ latest_entry_list.paginator.num_pages }}
+				</span>
+
+				{% if latest_entry_list.has_previous %}
+					<a href="?page={{ latest_entry_list.previous_page_number }}">{% trans 'previous' %}</a>
+				{% endif %}
+
+				{% for pagenum in latest_entry_list.paginator.page_range %}
+					{% if pagenum == latest_entry_list.number %}
+						<span class="current"><span>{{ pagenum }}</span></span>
+					{% else %}
+						<a class="page" href="?page={{ pagenum }}">{{ pagenum }}</a>
+						{% endif %}
+				{% endfor %}
+
+				{% if latest_entry_list.has_next %}
+					<a href="?page={{ latest_entry_list.next_page_number }}">{% trans 'next' %}</a>
+				{% endif %}
+			</span>
+		</div>
+    </section>
 {% endblock %}
  

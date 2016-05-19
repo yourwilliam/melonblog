@@ -28,43 +28,7 @@
            			
                     <section id="maincontent" class="eight columns positionleft">
                     	<div class="padcontent">
-{% block maincontent %}
-                            <section class="content">
-                            
-                            	{% if latest_entry_list %}
-                            		{% for entry in latest_entry_list %}
-                            		
-                            	<article class="post">
-                                    <div class="date-wrapper"> 
-										<div class="date-value">{{ entry.publication_date.day }}</div>
-                                        <div class="month-value">{{ entry.publication_date.month }}</div>
-                                    </div>
-                                	<div class="header-wrapper">
-                                        <h2 class="posttitle"><a href="single.html">{{entry.title}}</a></h2>
-                                        <div class="entry-utility">
-                                            <div class="user">Posted by <a href="#">Templatesquare</a></div> <div class="tag">Tags: <a href="#">Wordpress</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="postimg">
-                                        <img src="{{entry.head_image_url}}" alt="" />
-                                    </div>
-       
-                                    <div class="entry-content">
-                                    	{{ entry.blog_abstract }}
-										<a href="single.html" class="more">更多&rarr;</a>
-                                    </div>
-                                   
-                                    <div class="clear"></div>
-                                </article>
-                            		{% endfor %}
-                            	{% endif %}
-                            	
-								<div class="wp-pagenavi">
-                                	<span class="pages">Page 1 of 3</span><a class="page" href="#">1</a><span class="current"><span>2</span></span><a class="page" href="#">3</a>
-                            	</div>
-                            </section>
-                            {% endblock %}                 
+						{% block maincontent %}{% endblock %}                 
                         </div>
                     </section>
 
@@ -74,7 +38,7 @@
                     	<div class="padsidebar">
                         <ul>
                             <li class="widget-container">
-                                <h2 class="widget-title">Search</h2>
+                                <h2 class="widget-title">{% trans 'Search' %}</h2>
                                 <form action="#" id="searchform" method="get">
                                     <div class="bgsearch">
                                     <input type="text" value="" id="s" name="s"> 
@@ -83,40 +47,24 @@
                                 </form>
                             </li>
                             <li class="widget-container">
-                                <h2 class="widget-title">Categories</h2>
+                                <h2 class="widget-title">{% trans 'Categories' %}</h2>
                                 <ul>
-                                    <li><a href="#">Company News</a></li>
-                                    <li><a href="#">Website Design &amp; Development</a></li>
-                                    <li><a href="#">Learning jQuery</a></li>
-                                    <li><a href="#">Photography Design</a></li>
-                                    <li><a href="#">Wordpress</a></li>
-                                    <li><a href="#">Typography</a></li>
-                                    <li><a href="#">Columns</a></li>
-                                    <li><a href="#">Buttons</a></li>
-                                    <li><a href="#">Video Player</a></li>
+                                {% for catagory in catagory_list %}
+                                	<li><a href="#">{{ catagory }}</a></li>
+                                {% endfor %}
                                 </ul>
                             </li>
                             <li class="widget-container">
-                                <h2 class="widget-title">Latest Post</h2>
+                                <h2 class="widget-title">{% trans 'Latest Post' %}</h2>
                                 <ul class="rp-widget">
-                                    <li>
-                                        <div class="postimg"><img src="{% static 'images/content/lp1.gif' %}" alt="" /></div>
-                                        <h3><a href="#">Fusce imperdiet erat eu nisl pharetra.</a></h3>
-                                        <span class="smalldate">March 10, 2013</span>
-                                        <span class="clear"></span>
+                                	{% for post in latest_post %}
+                                		<li>
+		                                    <div class="postimg"><img src="{% static 'images/content/lp1.gif' %}" alt="" /></div>
+		                                    <h3><a href="#">{{ post.title }}</a></h3>
+		                                    <span class="smalldate">{{ post.publication_date }}</span>
+		                                    <span class="clear"></span>
                                     </li>
-                                    <li>
-                                        <div class="postimg"><img src="{% static 'images/content/lp2.gif' %}" alt="" /></div>
-                                        <h3><a href="#">Nam vel nunc at augue vehicula feugiat.</a></h3>
-                                        <span class="smalldate">March 10, 2013</span>
-                                        <span class="clear"></span>
-                                    </li>
-                                    <li>
-                                        <div class="postimg"><img src="{% static 'images/content/lp3.gif' %}" alt="" /></div>
-                                        <h3><a href="#">Integer pretium ipsum sit amet dui feugiat.</a></h3>
-                                        <span class="smalldate">March 10, 2013</span>
-                                        <span class="clear"></span>
-                                    </li>
+                                	{% endfor %}
                                 </ul>
                             </li>
                             <li class="widget-container">

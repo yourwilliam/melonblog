@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from tagging.fields import TagField
 
 # Create your models here.
 
@@ -32,7 +33,7 @@ class Entry(models.Model):
     # after to convert the content to html or markdown modle. add some method
     categorys = models.ManyToManyField(Category, blank=True, related_name="entries", verbose_name="categories");
 
-
+    tags = TagField()
     head_image_url = models.URLField("head image url", max_length=255, null=True, blank=True)
     head_image = models.ImageField(upload_to='photos/%Y/%m',null=True, blank=True)
     def __unicode__(self):
