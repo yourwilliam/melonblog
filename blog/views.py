@@ -27,8 +27,8 @@ def blog(request):
     
     return render(request, 'blog.html', context)
 
-def single(request):
-    post_id = request.GET.get('id')
+def single(request, post_id):
+    #post_id = request.GET.get('id')
     post = Entry.objects.get(id=post_id)
     
     latest_entry_list = Entry.objects.order_by('creation_date')[:3]
@@ -38,6 +38,22 @@ def single(request):
     return render(request, 'single.html', context)
     
     
+def category(request,category_id):
+    cate_entry_list = Entry.objects.filter(categorys__id=category_id)
     
+    paginator = Paginator(cate_entry_list, 5)
+    page = request.GET.get('page')
     
+    try:
+        entrys = paginator.page(page)
+    except PageNotAnInteger:
+        entrys = paginator.page(1)
+    except EmptyPage:
+        entrys = paginator.page(paginator.num_pages)
+
+    latest_entry_list = Entry.objects.order_by('creation_date')[:3]
+    catagory_list = Category.objects.all()
     
+    context = {'latest_entry_list':entrys, 'catagory_list':catagory_list, 'latest_post':latest_entry_list}
+    
+    return render(request, 'blog.html', context)

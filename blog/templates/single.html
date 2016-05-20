@@ -39,56 +39,55 @@
         </div>
         <div class="separator"></div>
         <section id="comment">
-            <h3>4 Comments</h3>
+        
+        	{% get_comment_count for post as comment_count %}
+        	
+            <h3>{{ comment_count }} Comments</h3>
             <ol class="commentlist">
+            
+            {% get_comment_list for post as comment_list %}
+            {% for comment in comment_list %}
                 <li>
                     <div class="comment-body">
                     	<div class="comment-arrow"></div>
-                        <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar"/></div>
-                        <cite class="fn">Richard Delano</cite>
-                        <span class="tdate">August 17, 2010 7:15 am</span> &nbsp;/&nbsp; <span class="reply"><a href="#">Reply</a></span>
+                        <div class="avatar-img"><img src="{% static 'images/content/avatar.gif' %}" alt="" class="avatar"/></div>
+                        <cite class="fn">{{ comment.user_name }}</cite>
+                        <cite class="fn"><a href="{{ comment.user_url }}">{{ comment.user_url }}</a></cite>
+                        <cite class="fn">{{ comment.user_email}}</cite>
+                        <span class="tdate">{{ comment.submit_date }}</span> &nbsp;/&nbsp; <span class="reply"><a href="#">Reply</a></span>
                         <div class="commenttext">
-                            <p>Nulla lobortis facilisis eros vitae mollis. Morbi consectetur, tortor ut feugiat rhoncus, nunc augue placerat massa, sit amet laoreet est libero quis nisl. Integer cursus sodales sem eu dapibus. Morbi lobortis eleifend lectus sit amet porttitor. Nam tincidunt congue laoreet.</p>
+                            <p>{{comment.comment}}</p>
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="comment-body">
-                    	<div class="comment-arrow"></div>
-                        <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar"/></div>
-                        <cite class="fn"><a href="#">Michael John</a></cite>
-                        <span class="tdate">August 17, 2010 7:15 am</span> &nbsp;/&nbsp; <span class="reply"><a href="#">Reply</a></span>
-                        <div class="commenttext">
-                            <p>Nulla lobortis facilisis eros vitae mollis. Morbi consectetur, tortor ut feugiat rhoncus, nunc augue placerat massa, sit amet laoreet est libero quis nisl. Integer cursus sodales sem eu dapibus. Morbi lobortis eleifend lectus sit amet porttitor. Nam tincidunt congue laoreet.</p>
-                        </div>
-                    </div>
-                    <ol>
-                        <li>
-                            <div class="comment-body">
-                            	<div class="comment-arrow"></div>
-                                <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar"/></div>
-                                <cite class="fn"><a href="#">Wayne Rooney</a></cite>
-                                <span class="tdate">August 17, 2010 7:15 am</span> &nbsp;/&nbsp; <span class="reply"><a href="#">Reply</a></span>
-                                <div class="commenttext">
-                                    <p>Nulla lobortis facilisis eros vitae mollis. Morbi consectetur, tortor ut feugiat rhoncus, nunc augue placerat massa, sit amet laoreet est libero quis nisl. Integer cursus sodales sem eu dapibus. Morbi lobortis eleifend lectus sit amet porttitor. Nam tincidunt congue laoreet.</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <div class="comment-body">
-                    	<div class="comment-arrow"></div>
-                        <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar"/></div>
-                        <cite class="fn"><a href="#">John Doe</a></cite>
-                        <span class="tdate">August 17, 2010 7:15 am</span> &nbsp;/&nbsp; <span class="reply"><a href="#">Reply</a></span>
-                        <div class="commenttext">
-                            <p>Nulla lobortis facilisis eros vitae mollis. Morbi consectetur, tortor ut feugiat rhoncus, nunc augue placerat massa, sit amet laoreet est libero quis nisl. Integer cursus sodales sem eu dapibus. Morbi lobortis eleifend lectus sit amet porttitor. Nam tincidunt congue laoreet.</p>
-                        </div>
-                    </div>
-                </li>
+            {% endfor %}
             </ol>
-        </section>              
-			{% render_comment_form for post %}
+        </section>  
+        <div class="separator"></div>
+        <h3>{% trans 'Send Us a Message' %}</h3>
+		<p>{% trans 'message content' %}</p>
+                        
+		{% get_comment_form for post as form %}
+		<div id="contactform">
+		  <form id="content" action="{% comment_form_target %}" method="post">
+		    {% csrf_token %}
+			<label for="name" id="name_label">Name (required)</label>
+			<input type="text" name="name" id="id_name" size="50" value="" class="text-input" />
+			<label for="email" id="email_label">URL (required)</label>
+			<input type="text" name="url" id="id_url" size="50" value="" class="text-input" />
+			<label for="email" id="email_label">Email (required)</label>
+			<input type="text" name="email" id="id_email" size="50" value="" class="text-input" />
+			<label for="msg" id="msg_label">Message</label>
+			<textarea rows="10" cols="40" name="comment" id="id_comment" class="text-input" maxlength="3000"></textarea>
+			<br/>
+		    {{ form.content_type }}
+		    {{ form.object_pk }}
+		    {{ form.timestamp }}
+		    {{ form.security_hash }}
+		    <input type="submit" class="button" id="submit_btn" name="submit" value="Send Message"/>
+		    <input type="hidden" name="next" value="{% url 'blog:single' post.id %}" />
+		  </form>
+		  <div class="clear"></div>
+		</div>
     </section>
 {% endblock %}

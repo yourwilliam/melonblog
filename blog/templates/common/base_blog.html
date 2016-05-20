@@ -49,8 +49,8 @@
                             <li class="widget-container">
                                 <h2 class="widget-title">{% trans 'Categories' %}</h2>
                                 <ul>
-                                {% for catagory in catagory_list %}
-                                	<li><a href="#">{{ catagory }}</a></li>
+                                {% for category in catagory_list %}
+                                	<li><a href="{% url 'blog:category' category.id %}">{{ category }}</a></li>
                                 {% endfor %}
                                 </ul>
                             </li>
@@ -60,7 +60,7 @@
                                 	{% for post in latest_post %}
                                 		<li>
 		                                    <div class="postimg"><img src="{% static 'images/content/lp1.gif' %}" alt="" /></div>
-		                                    <h3><a href="#">{{ post.title }}</a></h3>
+		                                    <h3><a href="{% url 'blog:single' post.id %}">{{ post.title }}</a></h3>
 		                                    <span class="smalldate">{{ post.publication_date }}</span>
 		                                    <span class="clear"></span>
                                     </li>

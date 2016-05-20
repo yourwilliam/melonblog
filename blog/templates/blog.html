@@ -14,7 +14,7 @@
                 <div class="month-value">{{ entry.publication_date|date:"M"}}</div>
             </div>
         	<div class="header-wrapper">
-                <h2 class="posttitle"><a href="single?id={{entry.id}}">{{entry.title}}</a></h2>
+                <h2 class="posttitle"><a href="{% url 'blog:single' entry.id %}">{{entry.title}}</a></h2>
                 <div class="entry-utility">
                     <div class="user">Posted by <a href="#">william</a></div> <div class="tag">Tags: <a href="#">{{entry.tags}}</a></div>
                 </div>
@@ -26,7 +26,7 @@
    
             <div class="entry-content">
             	{{ entry.blog_abstract }}
-				<a href="single.html" class="more">更多&rarr;</a>
+				<a href="{% url 'blog:single' entry.id %}" class="more">{% trans 'more' %} &rarr;</a>
             </div>
            
             <div class="clear"></div>
