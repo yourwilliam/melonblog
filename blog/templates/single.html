@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% load i18n %}
 {% load comments %}
+{% load markdown_deux_tags %}
+{% load djangomarkdown %}
 
 {% block maincontent %}
     <section class="content">
@@ -23,7 +25,8 @@
             </div>
    
             <div class="entry-content">
-                {{ post.content|safe }}
+                {#{ post.content|safe }#}
+                {{ post.content|djangomarkdown }}
             </div>
            
             <div class="clear"></div>

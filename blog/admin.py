@@ -1,5 +1,8 @@
 from django.contrib import admin
 from blog.models import Category, Entry
+from pagedown.widgets import AdminPagedownWidget
+from django.db import models
+from django import forms
 
 # Register your models here.
 
@@ -16,7 +19,10 @@ class EntryAdmin(admin.ModelAdmin):
     filter_horizontal = ("categorys",)
     list_filter = ("status",)
     list_per_page = 20
-    
+    formfield_overrides= {
+        models.TextField : {'widget': AdminPagedownWidget},
+    }
+      
     
 class CatagoryAdmin(admin.ModelAdmin):
     fields = ("title","slug","description")

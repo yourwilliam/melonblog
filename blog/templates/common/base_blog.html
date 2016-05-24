@@ -67,12 +67,14 @@
                                 	{% endfor %}
                                 </ul>
                             </li>
-                            <li class="widget-container">
-                                <h2 class="widget-title">Text Widget</h2>
-                                <div class="textwidget">Nunc in diam ut tortor vestibulum eleifend sit amet at diam. Phasellus mollis, ante et suscipit egestas, elit nunc facilisis elit, vitae malesuada dui mauris aliquam mi.</div>
-                            </li>
                         </ul>
-                        </div>
+                        <div id="tagsList">
+                        <h2 class="widget-title">{% trans 'Tag list' %}</h2>
+                        {% for tag in tag_list %}
+                        	<span><a href="{% url 'blog:tags' tag.id %}">{{ tag.name }}</a></span>
+                        {% endfor %}
+						</div>
+	                  </div>
                     </aside>
                		{% endblock %}  
                 </div>

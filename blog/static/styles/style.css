@@ -886,3 +886,10 @@ z-index:2px;
 #copyright{ padding:15px 10px; font-size:11px; text-align:center;}
 #copyright a, #copyright a:visited{}
 
+
+
+/*=============================================customer=================================================*/
+#tagsList {position:relative; width:300px; height:300px; margin: 0px auto; }
+#tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#000; font-weight:bold; text-decoration:none; padding: 3px 6px; }
+#tagsList a:hover { color:#FF0000; letter-spacing:2px;}
+

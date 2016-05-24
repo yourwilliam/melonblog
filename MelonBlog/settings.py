@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'blog',
     'pagination',
     'tagging',
+    'mshow',
+    'pagedown',
+    'markdown_deux',
 ]
 
 MIDDLEWARE_CLASSES = [
