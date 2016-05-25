@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import Entry, Category
+from blog.models import Entry, Category, Bookmark, BookmarkCategory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from tagging.models import Tag
 
@@ -84,3 +84,11 @@ def taglist(request, tag_id):
     context = {'latest_entry_list':entrys, 'catagory_list':catagory_list, 'latest_post':latest_entry_list, 'tag_list':tag_list}
     
     return render(request, 'blog.html', context)
+
+def bookmarklist(request):
+    categorys = BookmarkCategory.objects.all()
+    bookmarks = Bookmark.objects.all()
+    context = {'bookmark_list':bookmarks, 'category_list':categorys}
+    return render(request, 'portfolio.html', context)
+
+

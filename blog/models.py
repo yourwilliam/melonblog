@@ -31,10 +31,45 @@ class Entry(models.Model):
     #content
     content = models.TextField("content", null=True, blank=True)
     # after to convert the content to html or markdown modle. add some method
-    categorys = models.ManyToManyField(Category, blank=True, related_name="entries", verbose_name="categories");
+    categorys = models.ManyToManyField(Category, blank=True, related_name="entries", verbose_name="categories")
 
     tags = TagField()
     head_image_url = models.URLField("head image url", max_length=255, null=True, blank=True)
     head_image = models.ImageField(upload_to='photos/%Y/%m',null=True, blank=True)
     def __unicode__(self):
         return self.title
+    
+class BookmarkCategory(models.Model):
+    
+    title = models.CharField("title", max_length=255)
+    slug = models.CharField("slug", max_length=255)
+    description = models.CharField("description", null=True,blank=True,max_length=500)
+    
+    def __unicode__(self):
+        return self.title
+
+class Bookmark(models.Model):
+    
+    STATUS_CHOICES = ((0, 'draft'), (1, 'hidden'), (2, 'publish'))
+    title = models.CharField("title", max_length=255)
+    slug = models.CharField("slug", max_length=255)
+    description = models.TextField("description", null=True, blank=True, max_length=320)
+    status = models.IntegerField("status", db_index=True, choices=STATUS_CHOICES, default=2)
+    creation_date = models.DateTimeField("creation date", default=timezone.now)
+    click_times = models.IntegerField("click_times",default=0)
+    url = models.URLField("url", max_length=512,null=True, blank=True)
+    categorys = models.ManyToManyField(BookmarkCategory, blank=True, related_name="bookmarks", verbose_name="bookmarkcategory")
+    head_image = models.ImageField(upload_to='bookmarks/%Y/%m', null=True, blank=True,height_field=400,width_field=400)
+    category_name=models.CharField('category_title', max_length=512, null=True, blank=True)
+    
+    def save(self, *args, **kwargs):
+        category_list = self.categorys.all()
+        catename = ""
+        for category in category_list:
+            catename = catename + category.title
+        self.category_name = catename
+        super(Bookmark, self).save(*args, **kwargs)
+    
+    def __unicode__(self):
+        return self.title
+    

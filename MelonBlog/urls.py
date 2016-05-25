@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from MelonBlog import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^mshow/', include('mshow.urls', namespace='mshow')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^comments/', include('django_comments.urls')),
-    
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}) 
 ]
