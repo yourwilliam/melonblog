@@ -33,7 +33,8 @@ class BookmarkCategoryAdmin(admin.ModelAdmin):
     
 class BookmarkAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('content',{'fields':['title', 'slug', 'description', 'status', 'url', 'head_image']}),
+        ('content',{'fields':['title', 'slug', 'description', 'status', 'url']}),
+        ('image',{'fields':['head_image', 'widthfield', 'heightfield']}),
         ('others',{'fields':['creation_date','click_times', 'categorys']}),
     ]
     list_display = ('title', 'slug', 'url', 'creation_date', 'status', 'click_times')

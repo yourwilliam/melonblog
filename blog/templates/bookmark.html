@@ -44,16 +44,16 @@
                             <!-- Begin Portfolio Items -->
                             <div id="ts-display" class="row">
                             		{% for bookmark in bookmark_list %}
-	                            		<div class="one_fourth columns item {{bookmark.category_name}}">
+	                            		<div class="one_fourth columns item {{bookmark.category_title}}">
 	                                        <div class="ts-display-pf-img">
-	                                            <a class="image" href="{{bookmark.url}}"  >
+	                                            <a class="image" href="{{bookmark.url}}" target="_Blank" >
 	                                            <span class="rollover"></span>
 	                                            <span class="zoom"></span>
 	                                            <img src="{{MEDIA_URL}}{{bookmark.head_image }}" alt=""/>
 	                                            </a>							
 	                                        </div>
 	                                        <div class="ts-display-pf-text">
-	                                            <h2><a href="{{bookmark.url}}">{{bookmark.title}}</a></h2>
+	                                            <h2><a href="{{bookmark.url}} target="_Blank"">{{bookmark.title}}</a></h2>
 	                                            <span>{{bookmark.description}}</span>
 	                                        </div>
 	                                        <div class="ts-display-clear"></div>

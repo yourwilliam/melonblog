@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from tagging.fields import TagField
+from PIL import Image
 
 # Create your models here.
 
@@ -59,15 +60,21 @@ class Bookmark(models.Model):
     click_times = models.IntegerField("click_times",default=0)
     url = models.URLField("url", max_length=512,null=True, blank=True)
     categorys = models.ManyToManyField(BookmarkCategory, blank=True, related_name="bookmarks", verbose_name="bookmarkcategory")
-    head_image = models.ImageField(upload_to='bookmarks/%Y/%m', null=True, blank=True,height_field=400,width_field=400)
-    category_name=models.CharField('category_title', max_length=512, null=True, blank=True)
+    widthfield = models.IntegerField('widthfiled', default=400)
+    heightfield= models.IntegerField('heightfield', default=400)
+    head_image = models.ImageField(upload_to='bookmarks/%Y/%m',width_field='widthfield', height_field='heightfield', null=True, blank=True)
+    category_title=models.CharField('category_title', max_length=512, null=True, blank=True)
     
     def save(self, *args, **kwargs):
+        ###update the category name 
         category_list = self.categorys.all()
         catename = ""
         for category in category_list:
             catename = catename + category.title
         self.category_name = catename
+        ###edit the image
+        
+        
         super(Bookmark, self).save(*args, **kwargs)
     
     def __unicode__(self):

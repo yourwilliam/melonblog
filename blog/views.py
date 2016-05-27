@@ -89,6 +89,6 @@ def bookmarklist(request):
     categorys = BookmarkCategory.objects.all()
     bookmarks = Bookmark.objects.all()
     context = {'bookmark_list':bookmarks, 'category_list':categorys}
-    return render(request, 'portfolio.html', context)
+    return render(request, 'bookmark.html', context)
 
 
