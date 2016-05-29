@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from blog.models import Entry, Category, Bookmark, BookmarkCategory
+from blog.models import Entry, Category, Bookmark, BookmarkCategory, AppCategory,\
+    AppEntry
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from tagging.models import Tag
+from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
@@ -91,4 +94,26 @@ def bookmarklist(request):
     context = {'bookmark_list':bookmarks, 'category_list':categorys}
     return render(request, 'bookmark.html', context)
 
+def appcategory(request, appcategory_id):
+    appcategory = AppCategory.objects.get(id=appcategory_id)
+    applist = AppEntry.objects.filter(categorys_id=appcategory_id)
+    context = {'appcategory':appcategory, 'applist':applist}
+    return render(request, 'service.html', context)
 
+def contact(request):
+    latest_entry_list = Entry.objects.order_by('creation_date')[:3]
+    catagory_list = Category.objects.all()
+    tag_list = Tag.objects.all()
+    context = {'catagory_list':catagory_list, 'latest_post':latest_entry_list, 'tag_list':tag_list}
+    
+    return render(request, 'contact.html', context)
+
+@csrf_exempt
+def sendmail(request):
+    name = request.POST.get('name', 'customer')
+    email = request.POST.get('email', 'melonblogs@163.com')
+    subject = request.POST.get('subject')
+    subject = 'name:' + name + '\n from email:' + email + '\n subject:' + subject
+    msg = request.POST.get('msg')
+    send_mail(subject, msg, 'melonblogs@163.com', ['59170121@qq.com'],fail_silently=False)
+    return render(request, 'contact.html')

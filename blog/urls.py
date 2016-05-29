@@ -23,5 +23,8 @@ urlpatterns = [
     url(r'^single/(?P<post_id>[0-9]+)/$', views.single, name="single"),
     url(r'^category/(?P<category_id>[0-9]+)/$', views.category, name = "category"),
     url(r'^tags/(?P<tag_id>[0-9]+)/$', views.taglist, name = "tags"),
-    url(r'^bookmark',views.bookmarklist, name="bookmark")
+    url(r'^bookmark',views.bookmarklist, name="bookmark"),
+    url(r'^appcategory/(?P<appcategory_id>[0-9]+)/$', views.appcategory, name = "appcategory"),
+    url(r'^contact', views.contact, name="contact"),
+    url(r'^sendmail', views.sendmail, name="sendmail"),
 ]

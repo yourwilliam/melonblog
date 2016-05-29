@@ -1,5 +1,6 @@
 from django.contrib import admin
-from blog.models import Category, Entry, BookmarkCategory, Bookmark
+from blog.models import Category, Entry, BookmarkCategory, Bookmark, AppCategory,\
+    AppEntry
 from pagedown.widgets import AdminPagedownWidget
 from django.db import models
 
@@ -43,8 +44,23 @@ class BookmarkAdmin(admin.ModelAdmin):
     list_filter = ('status',)
     list_per_page = 20
 
-
 admin.site.register(Category)
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(BookmarkCategory)
 admin.site.register(Bookmark, BookmarkAdmin)
+
+class AppCategoryAdmin(admin.ModelAdmin):
+    field = ('title','slug','description')
+    list_display = ('title', 'slug')
+    
+class AppEntryAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('title',{'fields':['title', 'slug', 'app_abstract']}),
+        ('context', {'fields':['description', 'status', 'creation_date','click_times', 'url']}),
+        ('category', {'fields':['categorys']}),
+    ]
+    list_display = ('title', 'slug', 'creation_date', 'status', 'click_times')
+    search_fields = ['title', 'slug', 'status']
+    
+admin.site.register(AppCategory, AppCategoryAdmin)
+admin.site.register(AppEntry, AppEntryAdmin)

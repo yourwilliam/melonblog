@@ -893,3 +893,6 @@ z-index:2px;
 #tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#000; font-weight:bold; text-decoration:none; padding: 3px 6px; }
 #tagsList a:hover { color:#FF0000; letter-spacing:2px;}
 
+.appbox {height:300px;}
+.appbox p{height:170px;}
+

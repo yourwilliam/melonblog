@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from tagging.fields import TagField
-from PIL import Image
 
 # Create your models here.
 
@@ -76,6 +75,29 @@ class Bookmark(models.Model):
         
         
         super(Bookmark, self).save(*args, **kwargs)
+    
+    def __unicode__(self):
+        return self.title
+    
+class AppCategory(models.Model):
+    title = models.CharField("title", max_length=255)
+    slug = models.CharField("slug", max_length=255)
+    description = models.CharField("description", null=True,blank=True,max_length=500)
+    
+    def __unicode__(self):
+        return self.title
+    
+class AppEntry(models.Model):
+    STATUS_CHOICES = ((0, 'draft'), (1, 'hidden'), (2, 'publish'))
+    title = models.CharField("title", max_length=255)
+    slug = models.CharField("slug", max_length=255)
+    app_abstract = models.CharField("abstract", max_length=64)
+    description = models.TextField("description", null=True, blank=True, max_length=320)
+    status = models.IntegerField("status", db_index=True, choices=STATUS_CHOICES, default=2)
+    creation_date = models.DateTimeField("creation date", default=timezone.now)
+    click_times = models.IntegerField("click_times",default=0)
+    url = models.URLField("url", max_length=512,null=True, blank=True)
+    categorys = models.ForeignKey(AppCategory, related_name="appentry")
     
     def __unicode__(self):
         return self.title

@@ -6,6 +6,7 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+{% block head %}
 <head>
 
 	<!-- Basic Page Needs
@@ -44,6 +45,7 @@
     <script type="text/javascript" src="{% static 'js/tagcloud.js' %}"></script>
     
 </head>
+{% endblock %}
 
 
 <body>
@@ -66,20 +68,19 @@
                                 <li><a href="index.html">{% trans 'home' %} </a></li>
                                 <li><a href="{% url 'blog:blog' %}">{% trans 'blog' %}</a></li>
                                 <li><a href={% url 'blog:bookmark' %}>{% trans 'suggest url' %}</a></li>
-                                <li><a href="appcenter.html">{% trans 'appcenter' %}</a>
+                                <li><a href="#">{% trans 'appcenter' %}</a>
                                     <ul>
-                                        <li><a href="saasappcenter.html">{% trans 'saasappcenter' %}</a></li>
-                                        <li><a href="#">{% trans 'h5appcenter' %}</a></li>
+                                        <li><a href="{% url 'blog:appcategory'  3 %}">{% trans 'saasappcenter' %}</a></li>
+                                        <li><a href="{% url 'blog:appcategory' 4 %}">{% trans 'h5appcenter' %}</a></li>
                                         <li><a href="#">{% trans 'toolcenter' %}</a>
                                             <ul>
-                                                <li><a href="#">{% trans 'Windows Tools' %}</a></li>
-                                                <li><a href="#">{% trans 'Mac Tools' %}</a></li>
+                                                <li><a href="{% url 'blog:appcategory' 1 %}">{% trans 'Windows Tools' %}</a></li>
+                                                <li><a href="{% url 'blog:appcategory' 2 %}">{% trans 'Mac Tools' %}</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">{% trans 'aboutme' %}</a></li>
-                                <li><a href="content.html">{% trans 'contactme' %}</a></li>
+                                <li><a href="{% url 'blog:contact' %}">{% trans 'contactme' %}</a></li>
                                 
                             </ul><!-- topnav -->
                            

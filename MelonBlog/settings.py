@@ -163,3 +163,13 @@ MEDIA_URL = '/media/'
 # )
 
 SITE_ID = 1
+
+
+EMAIL_HOST = 'smtp.163.com'                   
+EMAIL_PORT = 25                                 
+EMAIL_HOST_USER = 'melonblogs@163.com'
+EMAIL_HOST_PASSWORD = 'Melon@123'
+EMAIL_SUBJECT_PREFIX = u'[melonblogs]'
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = 'melonblogs@163.com'

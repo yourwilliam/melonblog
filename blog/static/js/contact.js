@@ -39,7 +39,7 @@ jQuery(function() {
 		
 	  jQuery.ajax({
       type: "POST",
-      url: "process.php",
+      url: "sendmail",
       data: dataString,
       success: function() {
         jQuery('#contactform').html("<div id='message' class='ten columns'></div>");
