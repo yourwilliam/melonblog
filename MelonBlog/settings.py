@@ -75,10 +75,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "django.core.context_processors.debug",
-                "django.core.context_processors.i18n",
-                "django.core.context_processors.media",
-                "django.core.context_processors.request",
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.request',
             ],
         },
     },
@@ -168,7 +168,7 @@ SITE_ID = 1
 EMAIL_HOST = 'smtp.163.com'                   
 EMAIL_PORT = 25                                 
 EMAIL_HOST_USER = 'melonblogs@163.com'
-EMAIL_HOST_PASSWORD = 'Melon@123'
+EMAIL_HOST_PASSWORD = 'Melon123'
 EMAIL_SUBJECT_PREFIX = u'[melonblogs]'
 EMAIL_USE_TLS = True
 

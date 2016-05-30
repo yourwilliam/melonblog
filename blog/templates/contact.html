@@ -96,8 +96,9 @@
                                 <p>Etiam molestie molestie lorem, in aliquet ligula aliquet laoreet. Cras vehicula vulputate nibh, vitae egestas nibh egestas vitae. Proin ultrices, libero non vulputate ultricies, dolor est fermentum nulla, sagittis sagittis justo sapien et lectus.</p>
                             
                                 <div id="contactform">
-                                <form id="contact" action="{% url 'blog:sendmail' %}">
+                                <form id="contact" action="{% url 'blog:sendmail' %}" method="post">
                                   <fieldset>
+                                  	 {% csrf_token %}
                                       <span class="error" id="name_error">Please enter name !</span>
                                       <span class="error" id="email_error">Please enter email address !</span>
                                       <span class="error" id="email_error2">Please enter valid email address !</span>

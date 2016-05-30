@@ -108,12 +108,13 @@ def contact(request):
     
     return render(request, 'contact.html', context)
 
-@csrf_exempt
+
 def sendmail(request):
     name = request.POST.get('name', 'customer')
     email = request.POST.get('email', 'melonblogs@163.com')
     subject = request.POST.get('subject')
-    subject = 'name:' + name + '\n from email:' + email + '\n subject:' + subject
     msg = request.POST.get('msg')
+    msg = 'name:' + name + 'from email:' + email + 'subject:' + msg
+    
     send_mail(subject, msg, 'melonblogs@163.com', ['59170121@qq.com'],fail_silently=False)
     return render(request, 'contact.html')

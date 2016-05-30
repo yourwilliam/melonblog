@@ -34,7 +34,7 @@ jQuery(function() {
 	  return false;
     }
 		
-		var dataString = 'name='+ name + '&email=' + email + '&subject=' + subject + '&msg=' + msg;
+		var dataString = 'name='+ name + '&email=' + email + '&subject=' + subject + '&msg=' + msg + '&csrfmiddlewaretoken=' + csrfmiddlewaretoken;
 		//alert (dataString);return false;
 		
 	  jQuery.ajax({
