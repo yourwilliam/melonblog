@@ -20,10 +20,12 @@
                 </div>
             </div>
             <div class="clear"></div>
+            {% if post.head_image %}
             <div class="postimg">
-            	<img src="{{ post.head_image_url }}" alt="" />
+            	<img src="{{MEDIA_URL}}{{post.head_image}}" alt="" />
             </div>
-   
+			{% endif %}
+			   
             <div class="entry-content">
                 {#{ post.content|safe }#}
                 {{ post.content|djangomarkdown }}
@@ -32,14 +34,6 @@
             <div class="clear"></div>
         </article>
         
-		<div class="author">
-        	<h3>About Author:</h3>
-            <div class="alignleft"><img class="avatar scale-with-grid" alt="" src="images/content/avatar.gif"></div>
-            <div class="author-desc">
-            <h5>John Doe</h5>
-            <p>Aliquam erat volutpat. Nulla vel dolor vitae purus blandit semper. Sed neque eros, viverra vel sollicitudin mollis, luctus eget nulla. Maecenas in risus eu velit pretium egestas eget sit amet magna. Cum sociis natoque penatibus.</p>
-            </div>
-        </div>
         <div class="separator"></div>
         <section id="comment">
         
@@ -53,7 +47,7 @@
                 <li>
                     <div class="comment-body">
                     	<div class="comment-arrow"></div>
-                        <div class="avatar-img"><img src="{% static 'images/content/avatar.gif' %}" alt="" class="avatar"/></div>
+                        <div class="avatar-img"><img src="{% static 'images/content/customer.jpg' %}" alt="" class="avatar"/></div>
                         <cite class="fn">{{ comment.user_name }}</cite>
                         <cite class="fn"><a href="{{ comment.user_url }}">{{ comment.user_url }}</a></cite>
                         <cite class="fn">{{ comment.user_email}}</cite>

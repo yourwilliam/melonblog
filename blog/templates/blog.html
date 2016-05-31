@@ -20,10 +20,11 @@
                 </div>
             </div>
             <div class="clear"></div>
+            {% if entry.head_image %}
             <div class="postimg">
-                <img src="{{entry.head_image_url}}" alt="" />
+                <img src="{{MEDIA_URL}}{{entry.head_image}}" alt="" />
             </div>
-   
+   			{% endif %}
             <div class="entry-content">
             	{{ entry.blog_abstract }}
 				<a href="{% url 'blog:single' entry.id %}" class="more">{% trans 'more' %} &rarr;</a>

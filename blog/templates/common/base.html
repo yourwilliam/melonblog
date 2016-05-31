@@ -65,7 +65,7 @@
                     <section id="navigation">
                         <nav id="nav-wrap">
                             <ul id="topnav" class="sf-menu">
-                                <li><a href="index.html">{% trans 'home' %} </a></li>
+                                <li><a href="{% url 'blog:blog' %}">{% trans 'home' %} </a></li>
                                 <li><a href="{% url 'blog:blog' %}">{% trans 'blog' %}</a></li>
                                 <li><a href={% url 'blog:bookmark' %}>{% trans 'suggest url' %}</a></li>
                                 <li><a href="#">{% trans 'appcenter' %}</a>
@@ -106,14 +106,14 @@
                         <div id="footcol1"  class="three columns">
                             <ul>
                                 <li class="widget-container">
-                                    <h2 class="widget-title">{% trans 'Latest Post' %}</h2>
+                                    <h2 class="widget-title">{% trans 'About William blog' %}</h2>
                                     <ul class="rp-widget">
                                         <li>
-                                            <img  alt="" src="{% static 'images/content/rp.gif' %}">
-                                            <h3><a href="#">Cool Features Item</a></h3>
-                                            <span class="smalldate">April 27, 2013</span>
-                                            <p>Mauris sit amet purus est, nec mollis ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
-                                            <a href="#" class="more">Read More</a>
+                                            <img  alt="" src="{% static 'images/content/logo_50_50.png' %}">
+                                            <h3><a href="#">william blog</a></h3>
+                                            <span class="smalldate">November 18, 2015</span>
+                                            <p>william blog power by <a href="https://github.com/yourwilliam/melonblog">melon blog</a> for my melon baby.</p>
+                                            <a href="https://github.com/yourwilliam/melonblog" class="more">Read Melon Blog</a>
                                             <span class="clear"></span>
                                         </li>
                                     </ul>
@@ -123,14 +123,14 @@
                         <div id="footcol2"  class="three columns">
                             <ul>
                                 <li class="widget-container">
-                                    <h2 class="widget-title">{% trans 'Suggestionurl' %}</h2>
+                                    <h2 class="widget-title">{% trans 'Favourite Site' %}</h2>
 									<ul class="flickr">
-                                    	<li><a href="#"><img src="{% static 'images/content/g1.gif' %}" alt="" /></a></li>
-                                        <li><a href="#"><img src="{% static 'images/content/g2.gif' %}" alt="" /></a></li>
-                                        <li><a href="#"><img src="{% static 'images/content/g3.gif' %}" alt="" /></a></li>
-                                        <li><a href="#"><img src="{% static 'images/content/g4.gif' %}" alt="" /></a></li>
-                                        <li><a href="#"><img src="{% static 'images/content/g5.gif' %}" alt="" /></a></li>
-                                        <li><a href="#"><img src="{% static 'images/content/g6.gif' %}" alt="" /></a></li>
+                                    	<li><a href="http://www.hansap.com" target="_Blank"><img src="{% static 'images/content/g1.png' %}" alt="" /></a></li>
+                                        <li><a href="https://www.topcoder.com/" target="_Blank"><img src="{% static 'images/content/g2.png' %}" alt="" /></a></li>
+                                        <li><a href="http://toutiao.io/" target="_Blank"><img src="{% static 'images/content/g3.png' %}" alt="" /></a></li>
+                                        <li><a href="http://www.techtarget.com.cn/" target="_Blank"><img src="{% static 'images/content/g4.png' %}" alt="" /></a></li>
+                                        <li><a href="http://www.oschina.net/" target="_Blank"><img src="{% static 'images/content/g5.png' %}" alt="" /></a></li>
+                                        <li><a href="https://getpocket.com" target="_Blank"><img src="{% static 'images/content/g6.png' %}" alt="" /></a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -140,12 +140,11 @@
                                 <li class="widget-container">
                                     <h2 class="widget-title">{% trans 'Our Categories' %}</h2>
                                     <ul class="list">
-                                        <li><a href="#">{% trans 'home' %}</a></li>
-                                        <li><a href="#">{% trans 'blog' %}</a></li>
-                                        <li><a href="#">{% trans 'suggest url' %}</a></li>
+                                        <li><a href="{% url 'blog:blog' %}">{% trans 'home' %}</a></li>
+                                        <li><a href="{% url 'blog:blog' %}">{% trans 'blog' %}</a></li>
+                                        <li><a href="{% url 'blog:bookmark' %}">{% trans 'suggest url' %}</a></li>
                                         <li><a href="#">{% trans 'appcenter' %}</a></li>
-                                        <li><a href="#">{% trans 'aboutme' %}</a></li>
-                                        <li><a href="#">{% trans 'contactme' %}</a></li>
+                                        <li><a href="{% url 'blog:contact' %}">{% trans 'contactme' %}</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -155,9 +154,9 @@
                                 <li class="widget-container">
                                     <h2 class="widget-title">{% trans 'contact me' %}</h2>
                                     <ul class="sn">
-                                        <li><a href="http://twitter.com" title="Twitter"><span class="icon-img twitter"></span></a></li>
-                                        <li><a href="http://facebook.com" title="Facebook"><span class="icon-img facebook"></span></a></li>
-                                        <li><a href="https://plus.google.com" title="Google+"><span class="icon-img google"></span></a></li>
+                                        <li><a href="https://twitter.com/yourwilliam" title="Twitter"><span class="icon-img twitter"></span></a></li>
+                                        <li><a href="https://www.facebook.com/yourwilliam" title="Facebook"><span class="icon-img facebook"></span></a></li>
+                                        <li><a href="https://plus.google.com/u/0/103856410165086313285" title="Google+"><span class="icon-img google"></span></a></li>
                                         <li><a href="http://rss.com" title="RSS"><span class="icon-img rss"></span></a></li>
                                         <li><a href="http://pinterest.com" title="Pinterest"><span class="icon-img pinterest"></span></a></li>
                                     </ul> 

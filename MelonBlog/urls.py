@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from MelonBlog import settings
+from blog import views
 import django.views
 
 urlpatterns = [
+    url(r'^$', views.blog, name="index"),
     url(r'^admin/', admin.site.urls),
     url(r'^mshow/', include('mshow.urls', namespace='mshow')),
     url(r'^blog/', include('blog.urls', namespace='blog')),

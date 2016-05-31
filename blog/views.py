@@ -4,7 +4,6 @@ from blog.models import Entry, Category, Bookmark, BookmarkCategory, AppCategory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from tagging.models import Tag
 from django.core.mail import send_mail
-from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
