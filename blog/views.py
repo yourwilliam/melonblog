@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import Entry, Category, Bookmark, BookmarkCategory, AppCategory,\
+from blog.models import Entry, Category, Bookmark, BookmarkCategory, AppCategory, \
     AppEntry
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from tagging.models import Tag
@@ -28,12 +28,12 @@ def blog(request):
     
     tag_list = Tag.objects.all()
     
-    context = {'latest_entry_list':entrys, 'catagory_list':catagory_list, 'latest_post':latest_entry_list[:3],'tag_list':tag_list}
+    context = {'latest_entry_list':entrys, 'catagory_list':catagory_list, 'latest_post':latest_entry_list[:3], 'tag_list':tag_list}
     
     return render(request, 'blog.html', context)
 
 def single(request, post_id):
-    #post_id = request.GET.get('id')
+    # post_id = request.GET.get('id')
     post = Entry.objects.get(id=post_id)
     
     latest_entry_list = Entry.objects.order_by('creation_date')[:3]
@@ -44,7 +44,7 @@ def single(request, post_id):
     return render(request, 'single.html', context)
     
     
-def category(request,category_id):
+def category(request, category_id):
     cate_entry_list = Entry.objects.filter(categorys__id=category_id)
     
     paginator = Paginator(cate_entry_list, 5)
@@ -88,8 +88,10 @@ def taglist(request, tag_id):
     return render(request, 'blog.html', context)
 
 def bookmarklist(request):
+    
+    bookmarks = Bookmark.objects.raw("select book.id, book.title, book.description, book.click_times, book.url, book.head_image, cate.title as category_title from blog_bookmark as book, blog_bookmarkcategory as cate where book.categorys_id = cate.id and book.status = 2")
+
     categorys = BookmarkCategory.objects.all()
-    bookmarks = Bookmark.objects.all()
     context = {'bookmark_list':bookmarks, 'category_list':categorys}
     return render(request, 'bookmark.html', context)
 
@@ -115,5 +117,5 @@ def sendmail(request):
     msg = request.POST.get('msg')
     msg = 'name:' + name + 'from email:' + email + 'subject:' + msg
     
-    send_mail(subject, msg, 'melonblogs@163.com', ['59170121@qq.com'],fail_silently=False)
+    send_mail(subject, msg, 'melonblogs@163.com', ['59170121@qq.com'], fail_silently=False)
     return render(request, 'contact.html')

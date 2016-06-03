@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-17 23:13+0800\n"
+"POT-Creation-Date: 2016-06-02 14:39+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,75 +18,172 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: templates/common/base_nav.html:66 templates/common/base_nav.html:142
+#: blog/templates/blog.html:30
+msgid "more"
+msgstr "查看更多"
+
+#: blog/templates/blog.html:45
+msgid "previous"
+msgstr "向前"
+
+#: blog/templates/blog.html:57
+msgid "next"
+msgstr "向后"
+
+#: blog/templates/bookmark.html:12 blog/templates/bookmark.html:15
+msgid "Bookmark"
+msgstr "书签"
+
+#: blog/templates/bookmark.html:13
+msgid "Bookmark abstract"
+msgstr "分享一些经常使用的书签"
+
+#: blog/templates/bookmark.html:35
+#, fuzzy
+#| msgid "Our Categories"
+msgid "all categories"
+msgstr "网站目录"
+
+#: blog/templates/common/base.html:68 blog/templates/common/base.html:143
 msgid "home"
 msgstr "首页"
 
-#: templates/common/base_nav.html:67 templates/common/base_nav.html:143
+#: blog/templates/common/base.html:69 blog/templates/common/base.html:144
 msgid "blog"
 msgstr "博客"
 
-#: templates/common/base_nav.html:68 templates/common/base_nav.html:144
+#: blog/templates/common/base.html:70 blog/templates/common/base.html:145
 msgid "suggest url"
 msgstr "推荐导航"
 
-#: templates/common/base_nav.html:69 templates/common/base_nav.html:145
+#: blog/templates/common/base.html:71 blog/templates/common/base.html:146
 msgid "appcenter"
 msgstr "应用中心"
 
-#: templates/common/base_nav.html:71
+#: blog/templates/common/base.html:73
 msgid "saasappcenter"
 msgstr "SaaS应用中心"
 
-#: templates/common/base_nav.html:72
+#: blog/templates/common/base.html:74
 msgid "h5appcenter"
 msgstr "H5应用中心"
 
-#: templates/common/base_nav.html:73
+#: blog/templates/common/base.html:75
 msgid "toolcenter"
 msgstr "工具中心"
 
-#: templates/common/base_nav.html:75
+#: blog/templates/common/base.html:77
 msgid "Windows Tools"
 msgstr "Windows工具"
 
-#: templates/common/base_nav.html:76
+#: blog/templates/common/base.html:78
 msgid "Mac Tools"
 msgstr "MAC工具"
 
-#: templates/common/base_nav.html:81 templates/common/base_nav.html:146
-msgid "aboutme"
-msgstr "我的故事"
-
-#: templates/common/base_nav.html:82 templates/common/base_nav.html:147
+#: blog/templates/common/base.html:83 blog/templates/common/base.html:147
 #, fuzzy
 #| msgid "contentme"
 msgid "contactme"
 msgstr "联系我"
 
-#: templates/common/base_nav.html:108
-msgid "Latest Post"
-msgstr ""
+#: blog/templates/common/base.html:109
+msgid "About William blog"
+msgstr "关于William blog"
 
-#: templates/common/base_nav.html:125
-#, fuzzy
-#| msgid "suggest url"
-msgid "Suggestionurl"
-msgstr "推荐导航"
+#: blog/templates/common/base.html:126
+msgid "Favourite Site"
+msgstr "Favourite Site"
 
-#: templates/common/base_nav.html:140
+#: blog/templates/common/base.html:141
 msgid "Our Categories"
 msgstr "网站目录"
 
-#: templates/common/base_nav.html:155
+#: blog/templates/common/base.html:155
 #, fuzzy
 #| msgid "contentme"
 msgid "contact me"
 msgstr "联系我"
 
-#: templates/common/base_nav.html:177
+#: blog/templates/common/base.html:177
 msgid "Copyright"
-msgstr "Copyright ©2016. All Rights Reserved. Melon Blog made by william valentine"
+msgstr ""
+"Copyright ©2016. All Rights Reserved. Melon Blog made by william valentine"
+
+#: blog/templates/common/base_blog.html:11
+msgid "William Blog"
+msgstr "William Blog"
+
+#: blog/templates/common/base_blog.html:12
+msgid "William Blog Abstract"
+msgstr "William Blog 之家"
+
+#: blog/templates/common/base_blog.html:14
+msgid "william blog"
+msgstr ""
+
+#: blog/templates/common/base_blog.html:41 blog/templates/contact.html:136
+msgid "Search"
+msgstr "搜索"
+
+#: blog/templates/common/base_blog.html:50 blog/templates/contact.html:145
+#, fuzzy
+#| msgid "Our Categories"
+msgid "Categories"
+msgstr "网站目录"
+
+#: blog/templates/common/base_blog.html:58 blog/templates/contact.html:153
+msgid "Latest Post"
+msgstr "最新文章"
+
+#: blog/templates/common/base_blog.html:72 blog/templates/contact.html:167
+msgid "Tag list"
+msgstr "标签云"
+
+#: blog/templates/contact.html:63 blog/templates/contact.html:66
+#, fuzzy
+#| msgid "contentme"
+msgid "Contact us"
+msgstr "联系我"
+
+#: blog/templates/contact.html:64
+msgid "Contact us abstract"
+msgstr "通过这里联系我，会在第一时间反馈"
+
+#: blog/templates/contact.html:85
+msgid "Keep in Touch with me"
+msgstr "Keep in Touch with me"
+
+#: blog/templates/contact.html:95
+msgid "Send me a Message"
+msgstr "给我发邮件"
+
+#: blog/templates/contact.html:96
+msgid "welcome message"
+msgstr "感谢访问"
+
+#: blog/templates/single.html:19
+msgid "Posted by"
+msgstr "发布人"
+
+#: blog/templates/single.html:19
+msgid "Tags"
+msgstr "标签"
+
+#: blog/templates/single.html:64
+msgid "Send Us a Message"
+msgstr "给我发邮件"
+
+#: blog/templates/single.html:65
+msgid "message content"
+msgstr "邮件内容"
+
+#~ msgid "aboutme"
+#~ msgstr "我的故事"
+
+#, fuzzy
+#~| msgid "suggest url"
+#~ msgid "Suggestionurl"
+#~ msgstr "推荐导航"
 
 #~ msgid "hellotrans"
 #~ msgstr "你好 trans"

@@ -40,7 +40,7 @@ class BookmarkAdmin(admin.ModelAdmin):
     ]
     list_display = ('title', 'slug', 'url', 'creation_date', 'status', 'click_times')
     search_fields = ['title', 'slug', 'url']
-    filter_horizontal = ('categorys',)
+    #filter_horizontal = ('categorys',)
     list_filter = ('status',)
     list_per_page = 20
 

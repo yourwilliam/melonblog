@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-17 23:13+0800\n"
+"POT-Creation-Date: 2016-06-02 14:39+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,75 +17,171 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/common/base_nav.html:66 templates/common/base_nav.html:142
+#: blog/templates/blog.html:30
+msgid "more"
+msgstr "more"
+
+#: blog/templates/blog.html:45
+msgid "previous"
+msgstr "previous"
+
+#: blog/templates/blog.html:57
+msgid "next"
+msgstr "next"
+
+#: blog/templates/bookmark.html:12 blog/templates/bookmark.html:15
+msgid "Bookmark"
+msgstr "Bookmark"
+
+#: blog/templates/bookmark.html:13
+msgid "Bookmark abstract"
+msgstr "Bookmark provide the suggest url by william"
+
+#: blog/templates/bookmark.html:35
+#, fuzzy
+#| msgid "Our Categories"
+msgid "all categories"
+msgstr "Our Categories"
+
+#: blog/templates/common/base.html:68 blog/templates/common/base.html:143
 msgid "home"
 msgstr "Home"
 
-#: templates/common/base_nav.html:67 templates/common/base_nav.html:143
+#: blog/templates/common/base.html:69 blog/templates/common/base.html:144
 msgid "blog"
 msgstr "Blog"
 
-#: templates/common/base_nav.html:68 templates/common/base_nav.html:144
+#: blog/templates/common/base.html:70 blog/templates/common/base.html:145
 msgid "suggest url"
 msgstr "Suggestion"
 
-#: templates/common/base_nav.html:69 templates/common/base_nav.html:145
+#: blog/templates/common/base.html:71 blog/templates/common/base.html:146
 msgid "appcenter"
 msgstr "App Center"
 
-#: templates/common/base_nav.html:71
+#: blog/templates/common/base.html:73
 msgid "saasappcenter"
 msgstr "SaaS App Center"
 
-#: templates/common/base_nav.html:72
+#: blog/templates/common/base.html:74
 msgid "h5appcenter"
 msgstr "Html5 App Center"
 
-#: templates/common/base_nav.html:73
+#: blog/templates/common/base.html:75
 msgid "toolcenter"
 msgstr "Tools App Center"
 
-#: templates/common/base_nav.html:75
+#: blog/templates/common/base.html:77
 msgid "Windows Tools"
 msgstr "Windows Tools"
 
-#: templates/common/base_nav.html:76
+#: blog/templates/common/base.html:78
 msgid "Mac Tools"
 msgstr "Mac Tool"
 
-#: templates/common/base_nav.html:81 templates/common/base_nav.html:146
-msgid "aboutme"
-msgstr "About me"
-
-#: templates/common/base_nav.html:82 templates/common/base_nav.html:147
+#: blog/templates/common/base.html:83 blog/templates/common/base.html:147
 #, fuzzy
 #| msgid "contentme"
 msgid "contactme"
 msgstr "Content me"
 
-#: templates/common/base_nav.html:108
-msgid "Latest Post"
-msgstr ""
+#: blog/templates/common/base.html:109
+msgid "About William blog"
+msgstr "About William blog"
 
-#: templates/common/base_nav.html:125
-#, fuzzy
-#| msgid "suggest url"
-msgid "Suggestionurl"
-msgstr "Suggestion"
+#: blog/templates/common/base.html:126
+msgid "Favourite Site"
+msgstr "Favourite Site"
 
-#: templates/common/base_nav.html:140
+#: blog/templates/common/base.html:141
 msgid "Our Categories"
 msgstr "Our Categories"
 
-#: templates/common/base_nav.html:155
+#: blog/templates/common/base.html:155
 #, fuzzy
 #| msgid "contentme"
 msgid "contact me"
 msgstr "Content me"
 
-#: templates/common/base_nav.html:177
+#: blog/templates/common/base.html:177
 msgid "Copyright"
 msgstr "Copyright ©2013. All Rights Reserved. "
+
+#: blog/templates/common/base_blog.html:11
+msgid "William Blog"
+msgstr "William Blog"
+
+#: blog/templates/common/base_blog.html:12
+msgid "William Blog Abstract"
+msgstr "William Blog privide the IT technology"
+
+#: blog/templates/common/base_blog.html:14
+msgid "william blog"
+msgstr "william blog"
+
+#: blog/templates/common/base_blog.html:41 blog/templates/contact.html:136
+msgid "Search"
+msgstr "Search"
+
+#: blog/templates/common/base_blog.html:50 blog/templates/contact.html:145
+#, fuzzy
+#| msgid "Our Categories"
+msgid "Categories"
+msgstr "Our Categories"
+
+#: blog/templates/common/base_blog.html:58 blog/templates/contact.html:153
+msgid "Latest Post"
+msgstr "Latest Post"
+
+#: blog/templates/common/base_blog.html:72 blog/templates/contact.html:167
+msgid "Tag list"
+msgstr "Tag list"
+
+#: blog/templates/contact.html:63 blog/templates/contact.html:66
+#, fuzzy
+#| msgid "contentme"
+msgid "Contact us"
+msgstr "Content me"
+
+#: blog/templates/contact.html:64
+msgid "Contact us abstract"
+msgstr "Contact us, I will response soon."
+
+#: blog/templates/contact.html:85
+msgid "Keep in Touch with me"
+msgstr "Keep in Touch with me"
+
+#: blog/templates/contact.html:95
+msgid "Send me a Message"
+msgstr "Send me a Message"
+
+#: blog/templates/contact.html:96
+msgid "welcome message"
+msgstr "welcome message"
+
+#: blog/templates/single.html:19
+msgid "Posted by"
+msgstr "Posted by"
+
+#: blog/templates/single.html:19
+msgid "Tags"
+msgstr "Tags"
+
+#: blog/templates/single.html:64
+msgid "Send Us a Message"
+msgstr "Send Us a Message"
+
+#: blog/templates/single.html:65
+msgid "message content"
+msgstr "message content"
+
+#~ msgid "aboutme"
+#~ msgstr "About me"
+
+#, fuzzy
+#~| msgid "suggest url"
+#~ msgid "Suggestionurl"
+#~ msgstr "Suggestion"
 
 #~ msgid "hellotrans"
 #~ msgstr "hello trans"

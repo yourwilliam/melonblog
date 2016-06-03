@@ -58,23 +58,10 @@ class Bookmark(models.Model):
     creation_date = models.DateTimeField("creation date", default=timezone.now)
     click_times = models.IntegerField("click_times",default=0)
     url = models.URLField("url", max_length=512,null=True, blank=True)
-    categorys = models.ManyToManyField(BookmarkCategory, blank=True, related_name="bookmarks", verbose_name="bookmarkcategory")
+    categorys = models.ForeignKey(BookmarkCategory, blank=True)
     widthfield = models.IntegerField('widthfiled', default=400)
     heightfield= models.IntegerField('heightfield', default=400)
     head_image = models.ImageField(upload_to='bookmarks/%Y/%m',width_field='widthfield', height_field='heightfield', null=True, blank=True)
-    category_title=models.CharField('category_title', max_length=512, null=True, blank=True)
-    
-    def save(self, *args, **kwargs):
-        ###update the category name 
-        category_list = self.categorys.all()
-        catename = ""
-        for category in category_list:
-            catename = catename + category.title
-        self.category_name = catename
-        ###edit the image
-        
-        
-        super(Bookmark, self).save(*args, **kwargs)
     
     def __unicode__(self):
         return self.title
