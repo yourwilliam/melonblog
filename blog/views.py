@@ -13,7 +13,7 @@ def index(request):
 
 
 def blog(request):
-    latest_entry_list = Entry.objects.order_by('creation_date')
+    latest_entry_list = Entry.objects.order_by('-creation_date')
     paginator = Paginator(latest_entry_list, 5)
     page = request.GET.get('page')
     
