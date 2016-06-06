@@ -59,7 +59,6 @@
 
                     <div id="logo">
                         <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""/><h3 class="logofont">William's blog</h3><h4 class="logofont">made by pengjunjie (william valentine)</h4></a>
-                        
                     </div>
 
                     <section id="navigation">
@@ -157,7 +156,7 @@
                                         <li><a href="https://twitter.com/yourwilliam" title="Twitter"><span class="icon-img twitter"></span></a></li>
                                         <li><a href="https://www.facebook.com/yourwilliam" title="Facebook"><span class="icon-img facebook"></span></a></li>
                                         <li><a href="https://plus.google.com/u/0/103856410165086313285" title="Google+"><span class="icon-img google"></span></a></li>
-                                        <li><a href="http://rss.com" title="RSS"><span class="icon-img rss"></span></a></li>
+                                        <li><a href="{% url 'blog:latestentriesfeed' %}" title="RSS"><span class="icon-img rss"></span></a></li>
                                         <li><a href="http://pinterest.com" title="Pinterest"><span class="icon-img pinterest"></span></a></li>
                                     </ul> 
                               </li>

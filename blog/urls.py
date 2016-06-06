@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from . import views
+from blog.tools import latestentriesfeed
 
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     url(r'^appcategory/(?P<appcategory_id>[0-9]+)/$', views.appcategory, name = "appcategory"),
     url(r'^contact', views.contact, name="contact"),
     url(r'^sendmail', views.sendmail, name="sendmail"),
+    url(r'^latest/feed/$',latestentriesfeed.LatestEntriesFeed(), name="latestentriesfeed"),
 ]
