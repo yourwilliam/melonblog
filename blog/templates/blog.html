@@ -16,7 +16,11 @@
         	<div class="header-wrapper">
                 <h2 class="posttitle"><a href="{% url 'blog:single' entry.id %}">{{entry.title}}</a></h2>
                 <div class="entry-utility">
-                    <div class="user">Posted by <a href="#">william</a></div> <div class="tag">Tags: <a href="#">{{entry.tags}}</a></div>
+                    <div class="user">Posted by <a href="#">william</a></div> <div class="tag">Tags: 
+                    <a href="#">
+                    {{entry.tags}}
+                    </a>
+                    </div>
                 </div>
             </div>
             <div class="clear"></div>

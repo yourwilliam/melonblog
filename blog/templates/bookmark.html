@@ -34,7 +34,7 @@
                             <ul id="filter">
                                 <li class="current"><a href="#" data-filter="*">{% trans 'all categories' %}</a><span></span></li>
                                 {% for category in category_list %}
-                                	 <li><a href="#" data-filter=".{{category.title}}">{{category.title}}</a><span></span></li>
+                                	 <li><a href="#" data-filter=".{{category.title}}">{{category.title}}({{category.entrynum}})</a><span></span></li>
                                 {% endfor %}
                             </ul> 
                             <div class="clear"></div>

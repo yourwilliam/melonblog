@@ -50,7 +50,7 @@
                                 <h2 class="widget-title">{% trans 'Categories' %}</h2>
                                 <ul>
                                 {% for category in catagory_list %}
-                                	<li><a href="{% url 'blog:category' category.id %}">{{ category }}</a></li>
+                                	<li><a href="{% url 'blog:category' category.id %}">{{ category.title }}({{category.entrynum}})</a></li>
                                 {% endfor %}
                                 </ul>
                             </li>
