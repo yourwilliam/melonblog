@@ -36,7 +36,7 @@ def single(request, post_id):
     # post_id = request.GET.get('id')
     post = Entry.objects.get(id=post_id)
     
-    latest_entry_list = Entry.objects.order_by('creation_date')[:3]
+    latest_entry_list = Entry.objects.order_by('-creation_date')[:3]
     catagory_list = Category.objects.raw("select cate.id, cate.title, cate.description, count(cate.id) as entrynum from blog_category as cate, blog_entry_categorys as enca where cate.id = enca.category_id group by cate.id")
     tag_list = Tag.objects.all()
     
@@ -57,7 +57,7 @@ def category(request, category_id):
     except EmptyPage:
         entrys = paginator.page(paginator.num_pages)
 
-    latest_entry_list = Entry.objects.order_by('creation_date')[:3]
+    latest_entry_list = Entry.objects.order_by('-creation_date')[:3]
     catagory_list = Category.objects.raw("select cate.id, cate.title, cate.description, count(cate.id) as entrynum from blog_category as cate, blog_entry_categorys as enca where cate.id = enca.category_id group by cate.id")
     tag_list = Tag.objects.all()
     
@@ -79,7 +79,7 @@ def taglist(request, tag_id):
     except EmptyPage:
         entrys = paginator.page(paginator.num_pages)
 
-    latest_entry_list = Entry.objects.order_by('creation_date')[:3]
+    latest_entry_list = Entry.objects.order_by('-creation_date')[:3]
     catagory_list = Category.objects.raw("select cate.id, cate.title, cate.description, count(cate.id) as entrynum from blog_category as cate, blog_entry_categorys as enca where cate.id = enca.category_id group by cate.id")
     tag_list = Tag.objects.all()
     
@@ -102,7 +102,7 @@ def appcategory(request, appcategory_id):
     return render(request, 'service.html', context)
 
 def contact(request):
-    latest_entry_list = Entry.objects.order_by('creation_date')[:3]
+    latest_entry_list = Entry.objects.order_by('-creation_date')[:3]
     catagory_list = Category.objects.raw("select cate.id, cate.title, cate.description, count(cate.id) as entrynum from blog_category as cate, blog_entry_categorys as enca where cate.id = enca.category_id group by cate.id")
     tag_list = Tag.objects.all()
     context = {'catagory_list':catagory_list, 'latest_post':latest_entry_list, 'tag_list':tag_list}
