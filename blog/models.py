@@ -39,6 +39,9 @@ class Entry(models.Model):
     def __unicode__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return "/blog/single/%i/" % self.id
+    
 class BookmarkCategory(models.Model):
     
     title = models.CharField("title", max_length=255)
