@@ -18,6 +18,13 @@ from django.contrib import admin
 from MelonBlog import settings
 from blog import views
 import django.views
+from django.contrib.sitemaps.views import sitemap
+from blog.models import Entry
+from django.contrib.sitemaps import GenericSitemap
+
+sitemaps = {
+    'blog': GenericSitemap({'queryset': Entry.objects.all(), 'date_field': 'publication_date'}, priority=0.6),
+}
 
 urlpatterns = [
     url(r'^$', views.blog, name="index"),
@@ -25,5 +32,6 @@ urlpatterns = [
     url(r'^mshow/', include('mshow.urls', namespace='mshow')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^comments/', include('django_comments.urls')),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}) 
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
 ]
