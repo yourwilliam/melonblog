@@ -68,11 +68,13 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div id="tagsList">
+                        <div>
                         <h2 class="widget-title">{% trans 'Tag list' %}</h2>
+                        <div class="tagcloud">
                         {% for tag in tag_list %}
-                        	<span><a href="{% url 'blog:tags' tag.id %}">{{ tag.name }}</a></span>
+                        	<a href="{% url 'blog:tags' tag.id %}" class="tagitem btn btn-success btn-xs">{{ tag.name }}</a>
                         {% endfor %}
+                        </div>
 						</div>
 	                  </div>
                     </aside>

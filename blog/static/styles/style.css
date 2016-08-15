@@ -195,7 +195,6 @@ code {
 
 /*** END OF DEFAULT ELEMENT STYLES ***/
 
-
 /*============================================ CONTAINER  =================================================*/
 #outerheader{
 	max-width:1020px;
@@ -889,10 +888,12 @@ z-index:2px;
 
 
 /*=============================================customer=================================================*/
-#tagsList {position:relative; width:300px; height:300px; margin: 0px auto; }
-#tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#000; font-weight:bold; text-decoration:none; padding: 3px 6px; }
-#tagsList a:hover { color:#FF0000; letter-spacing:2px;}
 
 .appbox {height:300px;}
 .appbox p{height:170px;}
+
+
+/*==================item cloud=====================*/
+.tagitem {margin:2px 0px;}
+
 
