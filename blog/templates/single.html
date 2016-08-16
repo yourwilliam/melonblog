@@ -5,6 +5,15 @@
 {% load markdown_deux_tags %}
 {% load djangomarkdown %}
 
+{% block headcontent %}
+	<meta charset="utf-8" />
+	<title>{{post.title}}</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="{{post.tags}}" />
+    <meta name="description" content="{{post.blog_abstract}}" />
+	<meta name="author" content="william" />
+{% endblock %}
+
 {% block maincontent %}
     <section class="content">
     

@@ -11,13 +11,14 @@
 
 	<!-- Basic Page Needs
   ================================================== -->
+  {% block headcontent %}
 	<meta charset="utf-8" />
 	<title>amazing</title>
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
 	<meta name="author" content="" />
-
+  {% endblock %}
 	<!-- Mobile Specific Metas
   ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -89,7 +90,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{% url 'blog:contact' %}">{% trans 'contactme' %}</a></li>
-                                
+                                <li><a href="http://wedding.pengjunjie.com">{% trans 'wedding' %}</a></li>
                             </ul><!-- topnav -->
                            
                             <div class="clear"></div>
