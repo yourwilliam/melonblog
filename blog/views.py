@@ -7,14 +7,14 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
-    latest_entry_list = Entry.objects.order_by('creation_date')[:5]
+    latest_entry_list = Entry.objects.order_by('creation_date')[:10]
     context = {'latest_entry_list':latest_entry_list}
     return render(request, 'index.html', context)
 
 
 def blog(request):
     latest_entry_list = Entry.objects.order_by('-creation_date')
-    paginator = Paginator(latest_entry_list, 5)
+    paginator = Paginator(latest_entry_list, 10)
     page = request.GET.get('page')
     
     try:
@@ -45,9 +45,9 @@ def single(request, post_id):
     
     
 def category(request, category_id):
-    cate_entry_list = Entry.objects.filter(categorys__id=category_id)
+    cate_entry_list = Entry.objects.filter(categorys__id=category_id).order_by('-creation_date')
     
-    paginator = Paginator(cate_entry_list, 5)
+    paginator = Paginator(cate_entry_list, 10)
     page = request.GET.get('page')
     
     try:
@@ -69,7 +69,7 @@ def taglist(request, tag_id):
     
     tag = Tag.objects.get(id=tag_id)
     tag_entry_list = Entry.objects.filter(tags__icontains=tag.name)
-    paginator = Paginator(tag_entry_list, 5)
+    paginator = Paginator(tag_entry_list, 10)
     page = request.GET.get('page')
     
     try:
