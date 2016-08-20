@@ -28,6 +28,33 @@
                     <div class="user">{% trans 'Posted by' %}: <a href="#">william</a></div> <div class="tag">{% trans 'Tags' %}: <a href="#">{{post.tags}}</a></div>
                 </div>
             </div>
+            
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_pocket">Pocket</a>
+
+<a href="http://www.jiathis.com/share?uid=2111114" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	siteNum:15,
+	sm:"tsina,weixin,qzone,tieba,douban,googleplus,evernote,pocket,youdao,linkedin,ydnote",
+	summary:"",
+	shortUrl:false,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=2111114" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+
             <div class="clear"></div>
             {% if post.head_image %}
             <div class="postimg">
@@ -42,6 +69,34 @@
            
             <div class="clear"></div>
         </article>
+        
+            <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_pocket">Pocket</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_linkedin">LinkedIn</a>
+<a class="jiathis_button_pinterest">pinterest</a>
+<a class="jiathis_button_evernote">EverNote</a>
+
+<a href="http://www.jiathis.com/share?uid=2111114" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	siteNum:15,
+	sm:"tsina,weixin,qzone,tieba,douban,googleplus,evernote,pocket,youdao,linkedin,ydnote",
+	summary:"",
+	shortUrl:false,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=2111114" charset="utf-8"></script>
+<!-- JiaThis Button END -->
         
         <div class="separator"></div>
         <section id="comment">
@@ -69,6 +124,8 @@
             {% endfor %}
             </ol>
         </section>  
+        
+        
         <div class="separator"></div>
         <h3>{% trans 'Send Us a Message' %}</h3>
 		<p>{% trans 'message content' %}</p>
@@ -96,4 +153,5 @@
 		  <div class="clear"></div>
 		</div>
     </section>
+    
 {% endblock %}
