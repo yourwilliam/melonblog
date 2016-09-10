@@ -31,7 +31,7 @@ USE THIS STYLE SHEET FOR INNER PAGE
 
 .post .header-wrapper{ overflow:hidden}
 
-.posttitle, .posttitle a{font-size:24px; margin-bottom:0px; margin-top:5px; font-family: 'Roboto', sans-serif; text-transform:none;}
+.posttitle, .posttitle a{font-size:24px; margin-bottom:0px; margin-top:5px; font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif; text-transform:none;}
 .posttitle a:hover{text-decoration:none;}
 
 
@@ -105,7 +105,7 @@ border-radius: 5px;
 
 .author{ margin-bottom:0px;}
 .author h3{ font-size:16px;}
-.author h5{ font-family: 'Roboto', sans-serif; margin-bottom:5px;}
+.author h5{ font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif; margin-bottom:5px;}
 .author img, .avatar-img img{
 -webkit-border-radius: 56px;
 -moz-border-radius: 56px;
@@ -203,7 +203,7 @@ border-bottom-left-radius: 5px;
 .ts-display-pf-img{position:relative;}
 .ts-display-clear{clear:both; height:1px !important; line-height:1px !important; float:none!important}
 .ts-display-pf-text{padding:16px 0px 44px 0px; text-align:center}
-.ts-display-pf-text h2{	font-size:15px; margin-bottom:5px; font-family: 'Roboto', sans-serif;}
+.ts-display-pf-text h2{	font-size:15px; margin-bottom:5px; font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;}
 
 .ts-display-pf-img a.image img{ display:block;}
 .ts-display-pf-img img{

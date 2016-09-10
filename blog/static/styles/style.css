@@ -31,7 +31,7 @@ table {
 
 /*============================================ GLOBAL  =================================================*/
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;
 	font-size:13px;
 	margin:0 auto;
 	padding:0;
@@ -71,7 +71,7 @@ h4	{font-size:15px;}
 h5	{font-size:13px;}
 h6	{font-size:9px;}
 h1, h2, h3, h4, h5, h6, .pagetitle, .pagedesc
-{font-family: 'Droid Serif', serif;}
+{font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;}
 
 .title{ padding:8px 0 7px 8px; text-transform:uppercase;}
 .titleRegular{font-weight:400}
@@ -167,7 +167,7 @@ blockquote {
     margin: 0 40px 20px 40px;
     padding:0 0 0 20px;
 	font-size:14px;
-	font-family: 'Droid Serif', serif;
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;
 }
 
 	
@@ -185,7 +185,7 @@ blockquote.left{
 
 /* code */
 code {
-	font-family:Verdana, Arial;
+	font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;
 	letter-spacing:1px;
 	margin:25px 0 25px 0px;
 	display:block;
@@ -206,12 +206,12 @@ code {
 
 /*** HEADER ***/
 #top{}
-#logo{ text-align:center; font-family: 'Oswald', sans-serif;font-color:#000; margin-top:30px; margin-bottom:44px;}
+#logo{ text-align:center; font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;;font-color:#000; margin-top:30px; margin-bottom:44px;}
 #logo img{}
 #logo h1{margin:0; font-size:28px; line-height:28px;}
 #logo .desc{ display:block; font-size:14px; text-transform:uppercase;}
 
-.logofont{text-align:center; font-family: 'Oswald', sans-serif;color:#fff;}
+.logofont{text-align:center; "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;color:#fff;}
 
 /* TOP MENU */
 #navigation{position:relative; z-index:200; margin:0;}
@@ -225,7 +225,7 @@ code {
 	overflow:visible;
 	position:relative;
 	font-size:12px;
-	font-family: 'Nova Square', cursive;
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;
 	text-transform:uppercase;
 }
 .sf-menu li{ text-align:center; }
@@ -840,7 +840,7 @@ position:relative;
 z-index:2px;
 }
 .rp-widget li.last{margin:0 !important; padding:0 !important;}
-.rp-widget li h3{font-size:13px; margin-bottom:0px; font-family: 'Roboto', sans-serif;}
+.rp-widget li h3{font-size:13px; margin-bottom:0px; font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;}
 .rp-widget li .smalldate{font-size:10px; display:block; overflow:hidden; padding:0 0 0 0px}
 
 #sidebar .rp-widget li:before { content:""; padding-right:0px;}
