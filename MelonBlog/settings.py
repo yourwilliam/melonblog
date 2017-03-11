@@ -165,7 +165,7 @@ MEDIA_URL = '/media/'
 # LOCALE_PATHS = (
 #     os.path.join(BASE_DIR, 'locale'),
 # )
-#  
+#
 # TEMPLATE_CONTEXT_PROCESSORS = (
 #     "django.core.context_processors.i18n",
 # )
@@ -173,8 +173,8 @@ MEDIA_URL = '/media/'
 SITE_ID = 1
 
 
-EMAIL_HOST = 'smtp.163.com'                   
-EMAIL_PORT = 25                                 
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
 EMAIL_HOST_USER = 'melonblogs@163.com'
 EMAIL_HOST_PASSWORD = 'Melon123'
 EMAIL_SUBJECT_PREFIX = u'[melonblogs]'
