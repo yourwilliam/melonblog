@@ -92,3 +92,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+#media folder
+blog/media/
+
+#mac ds_store files
+*/.DS_Store
