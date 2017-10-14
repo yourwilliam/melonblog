@@ -1,0 +1,180 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+{% block head %}
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8" />
+	<title>英语统计工具 | 云计算、大数据、java、Python</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="云计算,大数据,人工智能,虚拟化,java,python,ITIL,运维,ansible,openstack,docker,运维自动化,云数据中心" />
+    <meta name="description" content="云计算,大数据,人工智能,虚拟化,java,python,ITIL,运维,ansible,openstack,docker" />
+	<meta name="author" content="william" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+	<!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/inner.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/color.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/flexslider.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/prettyPhoto.css' %}"  media="screen" />
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+
+
+</head>
+
+{% endblock %}
+
+
+{% block content %}
+
+        <!-- BEFORE CONTENT -->
+        <div id="outerbeforecontent">
+        	<div class="container">
+            <div class="row">
+                <div id="beforecontent" class="twelve columns">
+
+                    <h1 class="pagetitle">{% trans 'Contact us' %}</h1>
+                    <span class="pagedesc">{% trans 'Contact us abstract' %}</span>
+
+                    <a href="#" class="button">{% trans 'Contact us' %}</a>
+
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- END BEFORE CONTENT -->
+
+
+        <!-- MAIN CONTENT -->
+        <div id="outermain">
+        	<div class="container">
+                <div class="row">
+
+                    <section id="maincontent" class="eight columns positionleft">
+                    	<div class="padcontent">
+
+                            <section class="content">
+
+                                <div id="contactform">
+                                <form id="contact" enctype="multipart/form-data" action="{% url 'blog:readdoc' %}" method="post">
+                                  <fieldset>
+                                  	 {% csrf_token %}
+                                      <input id="wordfile" type="file" name="wordfile" />
+                                      <br />
+                                      <input type="submit" name="submit" class="button" id="submit_btn" value="Send Message"/>
+                                  </fieldset>
+                                </form>
+                                <div class="clear"></div>
+                                </div><!-- end contactform -->
+
+                                <div class="separator"></div>
+
+                                <h3>Find me</h3>
+
+
+                            </section>
+
+                        </div>
+                    </section>
+
+                   {% block sidebar %}
+                    <aside id="sidebar" class="four columns">
+                    	<div class="padsidebar">
+                        <ul>
+                            <li class="widget-container">
+                                <h2 class="widget-title">{% trans 'Search' %}</h2>
+                                <form action="#" id="searchform" method="get">
+                                    <div class="bgsearch">
+                                    <input type="text" value="" id="s" name="s">
+                                    <input type="submit" value="" class="searchbutton">
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="widget-container">
+                                <h2 class="widget-title">{% trans 'Categories' %}</h2>
+                                <ul>
+                                {% for category in catagory_list %}
+                                	<li><a href="{% url 'blog:category' category.id %}">{{ category.title }}({{ category.entrynum }})</a></li>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="widget-container">
+                                <h2 class="widget-title">{% trans 'Latest Post' %}</h2>
+                                <ul class="rp-widget">
+                                	{% for post in latest_post %}
+                                		<li>
+		                                    <div class="postimg"><img src="{% static 'images/content/lp1.gif' %}" alt="" /></div>
+		                                    <h3><a href="{% url 'blog:single' post.id %}">{{ post.title }}</a></h3>
+		                                    <span class="smalldate">{{ post.publication_date }}</span>
+		                                    <span class="clear"></span>
+                                    </li>
+                                	{% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                        <div id="tagsList">
+                        <h2 class="widget-title">{% trans 'Tag list' %}</h2>
+                        {% for tag in tag_list %}
+                        	<span><a href="{% url 'blog:tags' tag.id %}">{{ tag.name }}</a></span>
+                        {% endfor %}
+						</div>
+	                  </div>
+                    </aside>
+               		{% endblock %}
+
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+{% endblock %}
+
+{% block javascript %}
+<!-- ////////////////////////////////// -->
+<!-- //      Javascript Files        // -->
+<!-- ////////////////////////////////// -->
+<script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}"></script>
+
+<!-- jQuery Superfish -->
+<script type="text/javascript" src="{% static 'js/hoverIntent.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/superfish.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/supersubs.js' %}"></script>
+
+
+<!-- jQuery Dropdown Mobile -->
+<script type="text/javascript" src="{% static 'js/tinynav.min.js' %}"></script>
+
+<!-- Custom Script -->
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+<!-- Form Contact Script -->
+
+<!-- Custom Script -->
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/tagcloud.js' %}"></script>
+
+
+{% endblock %}

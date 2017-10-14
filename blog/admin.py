@@ -6,61 +6,75 @@ from django.db import models
 
 # Register your models here.
 
+
 class EntryAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('content',{'fields': ['title','slug', 'tags','content','blog_abstract','status']}),
-        ('head image', {'fields':['head_image','head_image_url']}),
-        ('time', {'fields': ['publication_date','start_publication','end_publication','creation_date','last_update'], 'classes': ['collapse']}),
-        ('catalog',{'fields':['categorys']}),
+        ('content', {'fields': ['title', 'slug', 'tags',
+                                'content', 'blog_abstract', 'status']}),
+        ('head image', {'fields': ['head_image', 'head_image_url']}),
+        ('time', {'fields': ['publication_date', 'start_publication',
+                             'end_publication', 'creation_date', 'last_update'], 'classes': ['collapse']}),
+        ('catalog', {'fields': ['categorys']}),
     ]
-    list_display = ('title', 'slug', 'tags', 'status', 'creation_date', 'last_update')
+    list_display = ('title', 'slug', 'tags', 'status',
+                    'creation_date', 'last_update')
     search_fields = ['title', 'slug', 'tags']
-    #django support 2 method of many to many javascript method. One is filter_horizontal, The other is filter_vertical
+    # django support 2 method of many to many javascript method. One is
+    # filter_horizontal, The other is filter_vertical
     filter_horizontal = ('categorys',)
     list_filter = ('status',)
     list_per_page = 20
-    formfield_overrides= {
-        models.TextField : {'widget': AdminPagedownWidget},
+    formfield_overrides = {
+        models.TextField: {'widget': AdminPagedownWidget},
     }
-      
-    
+
+
 class CategoryAdmin(admin.ModelAdmin):
-    fields = ('title','slug','description')
+    fields = ('title', 'slug', 'description')
     list_display = ('title', 'slug')
+
 
 class BookmarkCategoryAdmin(admin.ModelAdmin):
     field = ('title', 'slug', 'description')
     list_display = ('title', 'slug')
-    
+
+
 class BookmarkAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('content',{'fields':['title', 'slug', 'description', 'status', 'url']}),
-        ('image',{'fields':['head_image', 'widthfield', 'heightfield']}),
-        ('others',{'fields':['creation_date','click_times', 'categorys']}),
+        ('content', {'fields': ['title', 'slug',
+                                'description', 'status', 'url']}),
+        ('image', {'fields': ['head_image', 'widthfield', 'heightfield']}),
+        ('others', {'fields': ['creation_date', 'click_times', 'categorys']}),
     ]
-    list_display = ('title', 'slug', 'url', 'creation_date', 'status', 'click_times')
+    list_display = ('title', 'slug', 'url', 'creation_date',
+                    'status', 'click_times')
     search_fields = ['title', 'slug', 'url']
-    #filter_horizontal = ('categorys',)
+#   filter_horizontal = ('categorys',)
     list_filter = ('status',)
     list_per_page = 20
+
 
 admin.site.register(Category)
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(BookmarkCategory)
 admin.site.register(Bookmark, BookmarkAdmin)
 
+
 class AppCategoryAdmin(admin.ModelAdmin):
-    field = ('title','slug','description')
+    field = ('title', 'slug', 'description')
     list_display = ('title', 'slug')
-    
+
+
 class AppEntryAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('title',{'fields':['title', 'slug', 'app_abstract']}),
-        ('context', {'fields':['description', 'status', 'creation_date','click_times', 'url']}),
-        ('category', {'fields':['categorys']}),
+        ('title', {'fields': ['title', 'slug', 'app_abstract']}),
+        ('context', {'fields': ['description', 'status',
+                                'creation_date', 'click_times', 'url']}),
+        ('category', {'fields': ['categorys']}),
     ]
     list_display = ('title', 'slug', 'creation_date', 'status', 'click_times')
     search_fields = ['title', 'slug', 'status']
-    
+
+
 admin.site.register(AppCategory, AppCategoryAdmin)
 admin.site.register(AppEntry, AppEntryAdmin)

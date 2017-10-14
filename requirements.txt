@@ -1,0 +1,16 @@
+appdirs==1.4.3
+beautifulsoup4==4.5.3
+Django==1.9.6
+django-contrib-comments==1.8.0
+django-markdown-deux==1.0.5
+django-pagedown==0.1.1
+django-pagination==1.0.7
+django-tagging==0.4.5
+markdown2==2.3.3
+MySQL-python==1.2.5
+olefile==0.44
+packaging==16.8
+Pillow==4.0.0
+pyparsing==2.2.0
+requests==2.13.0
+six==1.10.0
